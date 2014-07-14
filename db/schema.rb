@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711055504) do
+ActiveRecord::Schema.define(version: 20140714063741) do
 
   create_table "items", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.decimal  "price",       precision: 8, scale: 2
+    t.integer  "price",       limit: 8
     t.string   "img_url"
     t.integer  "lcode"
     t.datetime "created_at"
