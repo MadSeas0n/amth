@@ -3,36 +3,36 @@
 <table id="items" class="display" cellspacing="0" width="100%">
 <thead>
   <tr>
-    <th>L Code</th>
+    <th width="70">L Code</th>
     <th>Title</th>
     <th>Price</th>
-    <th></th>
+    <th width="70"></th>
   </tr>
 </thead>
   
 <tbody>
   <% @items.each do |item| %>
-    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <tr>
 
-       <td><%= item.lcode %></td>
-
+        <td align="right"><%= item.lcode %></td>       
        
-       
-       <td class="list_description">
+        <td class="list_description">
          <dl>
            <dt><%= item.title %></dt>
            <dd><%= truncate(strip_tags(item.description), length: 80) %></dd>
          </dl>
-       </td>
+        </td>
 
-       <td><%= item.price %></td>
+        <td><%= item.price %></td>
 
-         <td class="list_actions">      
-           <%= link_to '<i class="ui-icon ui-icon-search"></i>'.html_safe, item %>
-           <%= link_to '<i class="ui-icon ui-icon-gear"></i>'.html_safe, edit_item_path(item) %>
-           <%= link_to '<i class="ui-icon ui-icon-trash"></i>'.html_safe, item, method: :delete, data: { confirm: "Delete #{item.title}?" } %>  
+        <td>
+                
+          <%= link_to '<i class="ui-icon ui-icon-search"></i>'.html_safe, item %>
+          <%#= link_to '<i class="ui-icon ui-icon-gear"></i>'.html_safe, edit_item_path(item) %>
+          <%#= link_to '<i class="ui-icon ui-icon-trash"></i>'.html_safe, item, method: :delete, data: { confirm: "Delete #{item.title}?" } %>
+                
         </td> 
-       </tr>
+    </tr>
   <% end %>
 </tbody>     
 </table>
