@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'jquery-datatables-rails', '~> 2.1.10.0.3'
 gem 'jquery-ui-rails', '~> 4.2.1'
 
+gem 'haml-rails', '~> 0.5.3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,0 +1,23 @@
+%h1 Listing items
+%table#items.display{cellspacing: "0", width: "100%"}
+  %thead
+    %tr
+      %th{width: "70"} L Code
+      %th Title
+      %th Price
+      %th{width: "70"}
+  %tbody
+    - @items.each do |item|
+      %tr
+        %td{align: "right"}= item.lcode
+        %td.list_description
+          %dl
+            %dt= item.title
+            %dd= truncate(strip_tags(item.description), length: 80)
+        %td= item.price
+        %td{align: "center"}
+          = link_to '<i class="ui-icon ui-icon-search"></i>'.html_safe, item
+        -#= link_to '<i class="ui-icon ui-icon-gear"></i>'.html_safe, edit_item_path(item)
+        -#= link_to '<i class="ui-icon ui-icon-trash"></i>'.html_safe, item, method: :delete, data: { confirm: "Delete #{item.title}?" } %>
+%br/
+= link_to 'New Item', new_item_path
