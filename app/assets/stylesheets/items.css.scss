@@ -3,11 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .items {
 	table {
+		border: 4px double balck;
 		border-collapse: collapse;
+        border-style: double;
 	}
 	table tr td {
 		padding: 5px;
 		vertical-align: top;
+		border: 1px;
+		border-style: dotted;
+		border-collapse: separate;
 	}
 	.list_image {
 		width: 60px;

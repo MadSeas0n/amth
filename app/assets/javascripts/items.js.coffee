@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
     $('#items').dataTable( {
-      
+        "sPaginationType": "full_numbers"
         "bJQueryUI": true
     });
 
