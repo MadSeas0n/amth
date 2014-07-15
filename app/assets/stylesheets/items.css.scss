@@ -3,37 +3,41 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .items {
 	table {
-		border: 4px double balck;
+		border: 4px double black;
 		border-collapse: collapse;
         border-style: double;
-	}
-	table tr td {
+	    table-layout: fixed;
+	    outline: none;
+
+
+	tr td   {
 		padding: 5px;
 		vertical-align: top;
 		border: 1px;
 		border-style: dotted;
 		border-collapse: separate;
+		overflow: hidden;
+	        }
 	}
-	.list_image {
-		width: 60px;
-		height: 70px;
-	}
+	.list_image {width: 60px;
+	          	 height: 70px;}
+	
 	.list_description {
-		width: 60%;
+		               width: 60%;
 
-		dl {
-			margin: 0
-		}
-		dt {
-			color: #244;
+		dl {margin: 0}
+
+		dt {color: #244;
 			font-weight: bold;
-			font-size: small;
-		}
-		dd {
-			margin: 0;
-			font-style: italic; ;
-		}
+			font-size: small;}
+		
+		dd {margin: 0;			
+			font-size: x-small;}
 	}
     
 	
+}
+
+#form {
+	margin-left: 20px;
 }
