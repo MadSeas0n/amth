@@ -1,21 +1,13 @@
-#form	
-	%p#notice= notice
-
-	%p
-	  %strong L Code:
-	  = @item.lcode
-
-	%p
-	  %strong Title:
-	  = @item.title
-
-	%p
-	  %strong Description:
-	  = @item.description
-
-	%p
-	  %strong>Price:
-	  = @item.price
-
-	= link_to 'Edit', edit_item_path(@item) |
-	= link_to 'Back', items_path
+%p#notice= notice
+%p
+  %strong Title:
+  = @item.title
+%p
+  %strong Description:
+  = @item.description
+%p
+  %strong Price:
+  = @item.price
+= link_to 'Edit', edit_item_path(@item)
+|
+\#{link_to 'Back', items_path}

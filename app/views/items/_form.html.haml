@@ -1,3 +1,4 @@
+-#.ui-widget-content  
 = form_for(@item) do |f|
   - if @item.errors.any?
     #error_explanation
@@ -28,4 +29,4 @@
     %br/
     = f.text_field :img_url
   .actions
-    = f.submit
+    = f.submit id: "btn_ok"

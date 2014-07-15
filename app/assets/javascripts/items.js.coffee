@@ -7,4 +7,17 @@ jQuery ->
         "bJQueryUI": true
     
 
+    $('#btn').button()
+    $('#btn_back').button( icons:  {primary: 'ui-icon-arrowreturnthick-1-w', secondary: null} );
     
+
+
+    $('#btn_ok').each -> 
+        $(this).replaceWith '<button type="' + $(this).attr('type') + '">' + $(this).val() + '</button>'
+    $('button:submit').button( icons:  {primary: 'ui-icon-check', secondary: null} )
+
+    $('#form').addClass('.ui-widget')
+
+
+
+ 
