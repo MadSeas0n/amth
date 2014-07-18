@@ -15,9 +15,3 @@ jQuery ->
     $('#btn_ok').each -> 
         $(this).replaceWith '<button type="' + $(this).attr('type') + '">' + $(this).val() + '</button>'
     $('button:submit').button( icons:  {primary: 'ui-icon-check', secondary: null} )
-
-    $('#form').addClass('.ui-widget')
-
-
-
- 

@@ -1,6 +1,7 @@
-%div
+.ui-state-default.ui-corner-all
 	%h3 New item
 
 	= render 'form'
 
-	= link_to "Back", items_path, id: "btn_back"
+	.back
+		= link_to "Back", items_path, id: "btn_back"

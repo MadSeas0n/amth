@@ -1,32 +1,64 @@
--#.ui-widget-content  
-= form_for(@item) do |f|
-  - if @item.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@item.errors.count, "error")
-        prohibited this item from being saved:
-      %ul
-        - @item.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :title
-    %br/
-    = f.text_field :title, size: 50
-  .field
-    = f.label :lcode
-    %br/
-    = f.text_field :lcode, size: 10
-  .field
-    = f.label :description
-    %br/
-    = f.text_area :description, rows: 6
-  .field    
-    = f.label :price
-    %br/
-    = f.text_field :price
-  .field
-    = f.label :image
-    %br/
-    = f.text_field :img_url
-  .actions
-    = f.submit id: "btn_ok"
+.form  
+  = form_for(@item) do |f|
+    - if @item.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@item.errors.count, "error")
+          prohibited this item from being saved:
+        %ul
+          - @item.errors.full_messages.each do |message|
+            %li= message
+    .field
+      = f.label :title    
+      .field1= f.text_field :title
+    .field
+      = f.label :lcode
+      .field1= f.number_field :lcode
+    .field    
+      = f.label :price
+      .field1= f.number_field :price
+    .field
+      = f.label :image
+      .field1= f.text_field :img_url
+    .field
+      = f.label :description
+      %br/
+      .field1= f.text_area :description, rows: 3, cols: 40
+
+    
+      #spisok1  
+        %ul
+          %li #{f.label :Поставщик}
+          %li #{f.label :Вес}      
+          %li #{f.label :'Закупка за кг ($)'}    
+          %li #{f.label :'Закупка за кг (руб)'}  
+          %li #{f.label :'Шиппинг за кг ($)'}    
+          %li #{f.label :'Шиппинг за кг (руб)'}  
+          %li #{f.label :'Закупка за обр ($)'}   
+          %li #{f.label :'Закупка за обр (руб)'} 
+          %li #{f.label :'Шиппинг за обр ($)'}   
+          %li #{f.label :'Шиппинг за обр (руб)'} 
+          %li #{f.label :'Себестоимость ($)'}    
+          %li #{f.label :'Себестоимость (руб)'}  
+          %li #{f.label :'Продажа (руб)'}        
+          %li #{f.label :'Продажа обнал (руб)'} 
+
+      #spisok2  
+        %ul
+          %li #{f.text_field :supplier_name, size: 5}
+          %li #{f.text_field :weight, size: 5}
+          %li #{f.text_field :purchase_kg_usd, size: 5}
+          %li #{f.text_field :purchase_kg_rur, size: 5}
+          %li #{f.text_field :shipping_kg_usd, size: 5}
+          %li #{f.text_field :shipping_kg_rur, size: 5}
+          %li #{f.text_field :purachse_per_item_usd, size: 5}
+          %li #{f.text_field :purachse_per_item_rur, size: 5}
+          %li #{f.text_field :shipping_per_item_usd, size: 5}
+          %li #{f.text_field :shipping_per_item_rur, size: 5}
+          %li #{f.text_field :self_cost_usd, size: 5}
+          %li #{f.text_field :self_cost_rur, size: 5}
+          %li #{f.text_field :sale_cost, size: 5}
+          %li #{f.text_field :sale_cost_final, size: 5}
+    %br  
+      .actions
+        = f.submit id: "btn_ok"

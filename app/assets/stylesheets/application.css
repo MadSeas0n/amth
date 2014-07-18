@@ -12,13 +12,15 @@
  *
  *= require_tree .
  *= require jquery.ui.all
+ *= require jquery-ui/eggplant
  *= require dataTables/src/demo_table_jui
  *= require_self
  */
-a         {color: #383838 ;
-           text-decoration: none;
-           outline: 0}
-a:visited {color: #585858 ;} 
-a:hover   {color: #000000 ;
-           background-color: transparent;}
-a:active  {color: #383838 ;} 
+a         {color: #383838                   !important;
+           text-decoration: none            !important;           
+           outline: 0                       !important; 
+           }
+a:visited {color: #383838                   !important;} 
+a:hover   {color: #000000                   !important;
+           background-color: transparent    !important;}
+a:active  {color: #383838                   !important;} 

@@ -12,7 +12,21 @@ Item.create!(
     title: 'Amethyst',
     description: %{Amethyst from Brasil},
     price: 1500,
-    img_url: 'amethyst.png'	
+    img_url: 'amethyst.png',	
+    weight: 1.5,
+    supplier: 'ARK',
+    purchase_kg_usd: 40,
+    purchase_kg_rur: 1200,
+    shipping_kg_usd: 5,
+    shipping_kg_rur: 150,
+    purachse_per_item_usd: 120,
+    purachse_per_item_rur: 3450,
+    shipping_per_item_usd: 1254,
+    shipping_per_item_rur: 3254,
+    self_cost_usd: 123,
+    self_cost_rur: 321,
+    sale_cost: 1524,
+    sale_cost_final: 12345,
 	)
 #...
 Item.create!(
