@@ -25,40 +25,92 @@
       %br/
       .field1= f.text_area :description, rows: 3, cols: 40
 
-    
-      #spisok1  
-        %ul
-          %li #{f.label :Поставщик}
-          %li #{f.label :Вес}      
-          %li #{f.label :'Закупка за кг ($)'}    
-          %li #{f.label :'Закупка за кг (руб)'}  
-          %li #{f.label :'Шиппинг за кг ($)'}    
-          %li #{f.label :'Шиппинг за кг (руб)'}  
-          %li #{f.label :'Закупка за обр ($)'}   
-          %li #{f.label :'Закупка за обр (руб)'} 
-          %li #{f.label :'Шиппинг за обр ($)'}   
-          %li #{f.label :'Шиппинг за обр (руб)'} 
-          %li #{f.label :'Себестоимость ($)'}    
-          %li #{f.label :'Себестоимость (руб)'}  
-          %li #{f.label :'Продажа (руб)'}        
-          %li #{f.label :'Продажа обнал (руб)'} 
+      %br/
+      
+      .form-group
+        .col-sm-4  
+          =f.label :'Поставщик' 
+        .col-sm-5
+          =f.text_field :supplier_name, class: 'form-control'
+      
+      .form-group
+        .col-sm-4
+          =f.label :'Вес'
+        .col-sm-5   
+          =f.text_field :weight, class: 'form-control'     
+      
+      .form-group
+        .col-sm-4    
+          =f.label :'Закупка за кг ($)'  
+        .col-sm-5     
+          =f.text_field :purchase_kg_usd, class: 'form-control'
+        
+      .form-group
+        .col-sm-4        
+          =f.label :'Закупка за кг (руб)'   
+        .col-sm-5  
+          =f.text_field :purchase_kg_rur, class: 'form-control'
+        
+      .form-group
+        .col-sm-4        
+          =f.label :'Шиппинг за кг ($)'     
+        .col-sm-5  
+          =f.text_field :shipping_kg_usd, class: 'form-control'  
+        
+      .form-group
+        .col-sm-4        
+          =f.label :'Шиппинг за кг (руб)'   
+        .col-sm-5  
+          =f.text_field :shipping_kg_rur, class: 'form-control' 
+        
+      .form-group
+        .col-sm-4        
+          =f.label :'Закупка за обр ($)'    
+        .col-sm-5  
+          =f.text_field :purachse_per_item_usd, class: 'form-control'  
+        
+      .form-group
+        .col-sm-4        
+          =f.label :'Закупка за обр (руб)'  
+        .col-sm-5  
+          =f.text_field :purachse_per_item_rur, class: 'form-control'
+        
+      .form-group
+        .col-sm-4        
+          =f.label :'Шиппинг за обр ($)'    
+        .col-sm-5  
+          =f.text_field :shipping_per_item_usd, class: 'form-control'  
+        
+      .form-group
+        .col-sm-4        
+          =f.label :'Шиппинг за обр (руб)'  
+        .col-sm-5  
+          =f.text_field :shipping_per_item_rur, class: 'form-control'
+        
+      .form-group
+        .col-sm-4        
+          =f.label :'Себестоимость ($)'     
+        .col-sm-5  
+          =f.text_field :self_cost_usd, class: 'form-control'
+        
+      .form-group
+        .col-sm-4        
+          =f.label :'Себестоимость (руб)'   
+        .col-sm-5  
+          =f.text_field :self_cost_rur, class: 'form-control' 
+        
+      .form-group
+        .col-sm-4        
+          =f.label :'Продажа (руб)'         
+        .col-sm-5  
+          =f.text_field :sale_cost, class: 'form-control'    
+        
+      .form-group
+        .col-sm-4        
+          =f.label :'Продажа обнал (руб)'   
+        .col-sm-5  
+          =f.text_field :sale_cost_final, class: 'form-control'
 
-      #spisok2  
-        %ul
-          %li #{f.text_field :supplier_name, size: 5}
-          %li #{f.text_field :weight, size: 5}
-          %li #{f.text_field :purchase_kg_usd, size: 5}
-          %li #{f.text_field :purchase_kg_rur, size: 5}
-          %li #{f.text_field :shipping_kg_usd, size: 5}
-          %li #{f.text_field :shipping_kg_rur, size: 5}
-          %li #{f.text_field :purachse_per_item_usd, size: 5}
-          %li #{f.text_field :purachse_per_item_rur, size: 5}
-          %li #{f.text_field :shipping_per_item_usd, size: 5}
-          %li #{f.text_field :shipping_per_item_rur, size: 5}
-          %li #{f.text_field :self_cost_usd, size: 5}
-          %li #{f.text_field :self_cost_rur, size: 5}
-          %li #{f.text_field :sale_cost, size: 5}
-          %li #{f.text_field :sale_cost_final, size: 5}
-    
+      
   .modal-footer  
     = f.submit id: "btn_ok"
