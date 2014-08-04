@@ -11,7 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery.ui.core
 //= require dataTables/jquery.dataTables
 //= require_tree .

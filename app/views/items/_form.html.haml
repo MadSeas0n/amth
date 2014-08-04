@@ -1,5 +1,5 @@
-.form  
-  = form_for(@item) do |f|
+= form_for(@item, remote: true, html: {class: "form-horizontal", style: "display:inline"}) do |f|
+  .modal-body 
     - if @item.errors.any?
       #error_explanation
         %h2
@@ -59,6 +59,6 @@
           %li #{f.text_field :self_cost_rur, size: 5}
           %li #{f.text_field :sale_cost, size: 5}
           %li #{f.text_field :sale_cost_final, size: 5}
-    %br  
-      .actions
-        = f.submit id: "btn_ok"
+    
+  .modal-footer  
+    = f.submit id: "btn_ok"
