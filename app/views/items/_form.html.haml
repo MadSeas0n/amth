@@ -8,109 +8,123 @@
         %ul
           - @item.errors.full_messages.each do |message|
             %li= message
-    .field
-      = f.label :title    
-      .field1= f.text_field :title
-    .field
-      = f.label :lcode
-      .field1= f.number_field :lcode
-    .field    
-      = f.label :price
-      .field1= f.number_field :price
-    .field
-      = f.label :image
-      .field1= f.text_field :img_url
-    .field
-      = f.label :description
-      %br/
-      .field1= f.text_area :description, rows: 3, cols: 40
+    .form-group
+      .col-sm-2
+        = f.label :title    
+      .col-sm-5 
+        = f.text_field :title, class: 'form-control input-sm'
 
+    .form-group
+      .col-sm-2  
+        = f.label :lcode
+      .col-sm-5
+        = f.text_field :lcode, class: 'form-control input-sm'
+
+    .form-group   
+      .col-sm-2
+        = f.label :price
+      .col-sm-5    
+        = f.text_field :price, class: 'form-control input-sm'
+    
+    .form-group
+      .col-sm-2  
+        = f.label :image
+      .col-sm-5
+        = f.text_field :img_url, class: 'form-control input-sm'
+    .form-group
+
+      .col-sm-2
+        = f.label :description
+      .col-sm-5
+        = f.text_area :description, rows: 3, cols: 40, class: 'form-control'
       %br/
       
-      .form-group
-        .col-sm-4  
-          =f.label :'Поставщик' 
-        .col-sm-5
-          =f.text_field :supplier_name, class: 'form-control'
+    .form-group
+      .col-sm-4  
+        =f.label :'Поставщик' 
+      .col-sm-5
+        =f.text_field :supplier_name, class: 'form-control input-sm'
+    
+    .form-group
+      .col-sm-4
+        =f.label :'Вес'
+      .col-sm-5   
+        =f.text_field :weight, class: 'form-control input-sm'     
+    
+    .form-group
+      .col-sm-4    
+        =f.label :'Закупка за кг ($)'  
+      .col-sm-5     
+        =f.text_field :purchase_kg_usd, class: 'form-control input-sm'
       
-      .form-group
-        .col-sm-4
-          =f.label :'Вес'
-        .col-sm-5   
-          =f.text_field :weight, class: 'form-control'     
+    .form-group
+      .col-sm-4        
+        =f.label :'Закупка за кг (руб)'   
+      .col-sm-5  
+        =f.text_field :purchase_kg_rur, class: 'form-control input-sm'
       
-      .form-group
-        .col-sm-4    
-          =f.label :'Закупка за кг ($)'  
-        .col-sm-5     
-          =f.text_field :purchase_kg_usd, class: 'form-control'
-        
-      .form-group
-        .col-sm-4        
-          =f.label :'Закупка за кг (руб)'   
-        .col-sm-5  
-          =f.text_field :purchase_kg_rur, class: 'form-control'
-        
-      .form-group
-        .col-sm-4        
-          =f.label :'Шиппинг за кг ($)'     
-        .col-sm-5  
-          =f.text_field :shipping_kg_usd, class: 'form-control'  
-        
-      .form-group
-        .col-sm-4        
-          =f.label :'Шиппинг за кг (руб)'   
-        .col-sm-5  
-          =f.text_field :shipping_kg_rur, class: 'form-control' 
-        
-      .form-group
-        .col-sm-4        
-          =f.label :'Закупка за обр ($)'    
-        .col-sm-5  
-          =f.text_field :purachse_per_item_usd, class: 'form-control'  
-        
-      .form-group
-        .col-sm-4        
-          =f.label :'Закупка за обр (руб)'  
-        .col-sm-5  
-          =f.text_field :purachse_per_item_rur, class: 'form-control'
-        
-      .form-group
-        .col-sm-4        
-          =f.label :'Шиппинг за обр ($)'    
-        .col-sm-5  
-          =f.text_field :shipping_per_item_usd, class: 'form-control'  
-        
-      .form-group
-        .col-sm-4        
-          =f.label :'Шиппинг за обр (руб)'  
-        .col-sm-5  
-          =f.text_field :shipping_per_item_rur, class: 'form-control'
-        
-      .form-group
-        .col-sm-4        
-          =f.label :'Себестоимость ($)'     
-        .col-sm-5  
-          =f.text_field :self_cost_usd, class: 'form-control'
-        
-      .form-group
-        .col-sm-4        
-          =f.label :'Себестоимость (руб)'   
-        .col-sm-5  
-          =f.text_field :self_cost_rur, class: 'form-control' 
-        
-      .form-group
-        .col-sm-4        
-          =f.label :'Продажа (руб)'         
-        .col-sm-5  
-          =f.text_field :sale_cost, class: 'form-control'    
-        
-      .form-group
-        .col-sm-4        
-          =f.label :'Продажа обнал (руб)'   
-        .col-sm-5  
-          =f.text_field :sale_cost_final, class: 'form-control'
+    .form-group
+      .col-sm-4        
+        =f.label :'Шиппинг за кг ($)'     
+      .col-sm-5  
+        =f.text_field :shipping_kg_usd, class: 'form-control input-sm'  
+      
+    .form-group
+      .col-sm-4        
+        =f.label :'Шиппинг за кг (руб)'   
+      .col-sm-5  
+        =f.text_field :shipping_kg_rur, class: 'form-control input-sm' 
+      
+    .form-group
+      .col-sm-4        
+        =f.label :'Закупка за обр ($)'    
+      .col-sm-5  
+        =f.text_field :purachse_per_item_usd, class: 'form-control input-sm'  
+      
+    .form-group
+      .col-sm-4        
+        =f.label :'Закупка за обр (руб)'  
+      .col-sm-5  
+        =f.text_field :purachse_per_item_rur, class: 'form-control input-sm'
+      
+    .form-group
+      .col-sm-4        
+        =f.label :'Шиппинг за обр ($)'    
+      .col-sm-5  
+        =f.text_field :shipping_per_item_usd, class: 'form-control input-sm'  
+      
+    .form-group
+      .col-sm-4        
+        =f.label :'Шиппинг за обр (руб)'  
+      .col-sm-5  
+        =f.text_field :shipping_per_item_rur, class: 'form-control input-sm'
+      
+    .form-group
+      .col-sm-4        
+        =f.label :'Себестоимость ($)'     
+      .col-sm-5  
+        =f.text_field :self_cost_usd, class: 'form-control input-sm'
+      
+    .form-group
+      .col-sm-4        
+        =f.label :'Себестоимость (руб)'   
+      .col-sm-5  
+        =f.text_field :self_cost_rur, class: 'form-control input-sm' 
+      
+    .form-group
+      .col-sm-4        
+        =f.label :'Продажа (руб)'         
+      .col-sm-5  
+        =f.text_field :sale_cost, class: 'form-control input-sm'    
+      
+    .form-group
+      .col-sm-4        
+        =f.label :'Продажа обнал (руб)'   
+      .col-sm-5  
+        =f.text_field :sale_cost_final, class: 'form-control input-sm'
 
       
   .modal-footer  
-    = f.submit id: "btn_ok"
+    = f.submit id: "btn_ok", class: 'btn btn-success'
+
+    

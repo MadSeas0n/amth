@@ -1,7 +1,8 @@
 .modal-dialog
   .modal-content
     .modal-header
-      %h3 New Item
+      %h3 New Item 
+      = button_to "X", '#', class: "btn btn-danger btn-xs", data: {dismiss: "modal"}
     .form-horizontal{role: "form"}
     = render 'form'
     	

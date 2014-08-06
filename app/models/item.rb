@@ -6,4 +6,5 @@ class Item < ActiveRecord::Base
 		with: %r{\.(gif|jpg|png)\Z}i,
 		message: "Загружаемое изображение должно быть в формате JPG, GIF, PNG."
 	}
+
 end
