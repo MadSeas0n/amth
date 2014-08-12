@@ -1,11 +1,17 @@
 %p#notice= notice
 
-%h2 Продажа №#
-%ul
+%h2 Продажа №
+%table
   - @cart.cart_items.each do |i|
-    %li      
-      = i.quantity
-      \× #{i.item.title}
-      = i.item.lcode
+    %tr
+      %td
+        = i.quantity
+        \×
+      %td= i.item.title
+      %td.item_price= number_to_currency(i.total_price)
+  %tr.total_line
+    %td{colspan: "2"} Total
+    %td.total_cell= number_to_currency(@cart.total_price)
+
 = button_to 'Очистить список товарныx позиций', @cart, method: :delete, data: {confirm: 'Все товарные позиции будут удалены из корзины! Продолжить?'}    
       
