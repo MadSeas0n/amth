@@ -1,3 +1,4 @@
+%p#notice= notice
 %h1 Галерея Аметист
 %table#items.display{cellspacing: "0", width: "100%"}
   %thead
@@ -27,6 +28,7 @@
           %dl
             %dt= link_to "#{i.title}", i
             %dd= truncate(strip_tags(i.description), length: 80)
+          = button_to 'Add to cart', cart_items_path(item_id: i)  
         %td= i.price
         %td= i.supplier_name
         %td= i.weight
