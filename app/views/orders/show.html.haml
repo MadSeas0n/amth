@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Comments:
+  = @order.comments
+%p
+  %b Payment type:
+  = @order.payment_type
+
+= link_to 'Edit', edit_order_path(@order)
+\|
+= link_to 'Back', orders_path

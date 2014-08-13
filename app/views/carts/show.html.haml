@@ -12,6 +12,8 @@
   %tr.total_line
     %td{colspan: "2"} Total
     %td.total_cell= number_to_currency(@cart.total_price)
+    -#%td= button_to 'Delete', i, method: :delete, data: {confirm: "Удалить #{i.item.title}?"}
 
+= button_to 'Оформить', new_order_path, method: :get
 = button_to 'Очистить список товарныx позиций', @cart, method: :delete, data: {confirm: 'Все товарные позиции будут удалены из корзины! Продолжить?'}    
       
