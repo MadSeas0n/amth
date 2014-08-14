@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.html { redirect_to items_url }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -63,6 +63,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def to_rur(price)
+    return price * 36
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
@@ -71,6 +75,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:title, :description, :price)
+      params.require(:item).permit(:title, :lcode, :img_url, :description, :price, :supplier_name, :weight, :supplier, :purchase_kg_usd, :purchase_kg_rur, :shipping_kg_usd, :shipping_kg_rur, :purachse_per_item_usd, :purachse_per_item_rur, :shipping_per_item_usd, :shipping_per_item_rur, :self_cost_usd, :self_cost_rur, :sale_cost, :sale_cost_final)
     end
 end

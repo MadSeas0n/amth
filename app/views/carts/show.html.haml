@@ -8,10 +8,10 @@
         = i.quantity
         \×
       %td= i.item.title
-      %td.item_price= number_to_currency(i.total_price)
+      %td.item_price= number_to_currency(i.total_price, unit: "руб", format: "%n %u")
   %tr.total_line
     %td{colspan: "2"} Total
-    %td.total_cell= number_to_currency(@cart.total_price)
+    %td.total_cell= number_to_currency(@cart.total_price, unit: "руб", format: "%n %u")
     -#%td= button_to 'Delete', i, method: :delete, data: {confirm: "Удалить #{i.item.title}?"}
 
 = button_to 'Оформить', new_order_path, method: :get
