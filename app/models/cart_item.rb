@@ -4,6 +4,6 @@ class CartItem < ActiveRecord::Base
   belongs_to :cart
 
   def total_price
-  	item.price * quantity
+  	item.sale_cost_final * quantity
   end
 end

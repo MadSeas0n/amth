@@ -2,7 +2,7 @@ class Item < ActiveRecord::Base
 	has_many :cart_items
 	before_destroy :ensure_cart_is_empty
 
-	validates :title, :lcode, :price, presence: true
+	validates :title, :lcode, presence: true
 	#validates :price, numericality: {greater_than_or_equal_to: 0}
 	validates :title, :lcode, uniqueness: true
 	#validates :img_url, allow_blank: true, format: {
@@ -21,7 +21,4 @@ class Item < ActiveRecord::Base
 		end		
 	end
 
-	def to_rur(price)
-		return price * 36
-	end
 end

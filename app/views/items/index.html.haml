@@ -30,7 +30,7 @@
 
             %dd= truncate(strip_tags(i.description), length: 80)
           .add_button= button_to 'Add to cart', cart_items_path(item_id: i)
-        %td= i.price
+        %td
         %td= i.supplier_name
         %td= i.weight
         %td= i.purchase_kg_usd

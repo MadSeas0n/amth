@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813080150) do
+ActiveRecord::Schema.define(version: 20140815104803) do
 
   create_table "cart_items", force: true do |t|
     t.integer  "item_id"
@@ -34,26 +34,25 @@ ActiveRecord::Schema.define(version: 20140813080150) do
   create_table "items", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.float    "price",                 limit: 8
     t.string   "img_url"
     t.integer  "lcode"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "supplier_name"
-    t.float    "weight"
+    t.decimal  "weight",                precision: 8, scale: 2
     t.string   "supplier"
-    t.float    "purchase_kg_usd"
-    t.float    "purchase_kg_rur"
-    t.float    "shipping_kg_usd"
-    t.float    "shipping_kg_rur"
-    t.float    "purachse_per_item_usd"
-    t.float    "purachse_per_item_rur"
-    t.float    "shipping_per_item_usd"
-    t.float    "shipping_per_item_rur"
-    t.float    "self_cost_usd"
-    t.float    "self_cost_rur"
-    t.float    "sale_cost"
-    t.float    "sale_cost_final"
+    t.decimal  "purchase_kg_usd",       precision: 8, scale: 2
+    t.decimal  "purchase_kg_rur",       precision: 8, scale: 2
+    t.decimal  "shipping_kg_usd",       precision: 8, scale: 2
+    t.decimal  "shipping_kg_rur",       precision: 8, scale: 2
+    t.decimal  "purachse_per_item_usd", precision: 8, scale: 2
+    t.decimal  "purachse_per_item_rur", precision: 8, scale: 2
+    t.decimal  "shipping_per_item_usd", precision: 8, scale: 2
+    t.decimal  "shipping_per_item_rur", precision: 8, scale: 2
+    t.decimal  "self_cost_usd",         precision: 8, scale: 2
+    t.decimal  "self_cost_rur",         precision: 8, scale: 2
+    t.decimal  "sale_cost",             precision: 8, scale: 2
+    t.decimal  "sale_cost_final",       precision: 8, scale: 2
   end
 
   create_table "orders", force: true do |t|
