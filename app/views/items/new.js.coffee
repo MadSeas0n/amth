@@ -14,6 +14,15 @@ jQuery ->
 		$("#item_sale_cost").val((parseFloat(($("#item_self_cost_rur").val())*3)).toFixed(2))
 		$("#item_sale_cost_final").val((parseFloat(($("#item_sale_cost").val())*1.3)).toFixed(2))
 
+
+
+
+
+	$("#btn_ok").click ->		
+		$('#modal_dialog').modal("hide")
+		$("#items").fnReloadAjax()
+
+
 				
 		
 

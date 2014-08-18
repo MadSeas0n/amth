@@ -1,2 +1,3 @@
 
-$('#modal_dialog').modal("hide")
+$("#items").fnReloadAjax()
+$("#modal_dialog").modal("hide")

@@ -1,11 +1,14 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-dl, div.add_button {
-	display: inline-block;
+.add_button {
 	position: relative;
-	}
+	bottom: 32px;
+	left: 180px;
+		}
 td.list_description {
 	margin-right: 10%;
 	margin-left: 10%;
+	height: 10px;
 }
+

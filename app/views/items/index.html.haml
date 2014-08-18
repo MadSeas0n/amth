@@ -5,7 +5,6 @@
     %tr
       %th L Code
       %th.title{width: "250"} Title
-      %th Price
       %th Поставщик
       %th Вес
       %th Закупка за кг ($)
@@ -20,31 +19,9 @@
       %th Себестоимотсь (руб)
       %th Продажа (руб)
       %th Продажа обнал. (руб)
-  %tbody
-    - @items.each do |i|
-      %tr
-        %td{align: "right"}= i.lcode
-        %td.list_description
-          %dl
-            %dt= link_to "#{i.title}", i
-
-            %dd= truncate(strip_tags(i.description), length: 80)
-          .add_button= button_to 'Add to cart', cart_items_path(item_id: i)
-        %td
-        %td= i.supplier_name
-        %td= i.weight
-        %td= i.purchase_kg_usd
-        %td= i.purchase_kg_rur
-        %td= i.shipping_kg_usd
-        %td= i.shipping_kg_rur
-        %td= i.purachse_per_item_usd
-        %td= i.purachse_per_item_usd
-        %td= i.shipping_per_item_usd
-        %td= i.shipping_per_item_rur
-        %td= i.self_cost_usd
-        %td= i.self_cost_rur
-        %td= i.sale_cost
-        %td= i.sale_cost_final
+  %tbody.items_index
+    = render 'index'
+    
 %br/
 
 = button_to "Add new Item", new_item_path, method: :get, class: 'btn btn-primary', remote: true
