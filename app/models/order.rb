@@ -10,4 +10,8 @@ class Order < ActiveRecord::Base
 			cart_items << item			
 		end		
 	end
+	
+	def total
+		cart_items.map do |i| i.total_price end.sum
+	end
 end

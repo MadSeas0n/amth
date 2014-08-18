@@ -6,6 +6,7 @@
 %p
   %b Payment type:
   = @order.payment_type
+  = @order.total
 
 = link_to 'Edit', edit_order_path(@order)
 \|

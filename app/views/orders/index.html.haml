@@ -1,20 +1,26 @@
 %h1 Listing orders
 
-%table
-  %tr
-    %th Comments
-    %th Payment type
-    %th
-    %th
-    %th
-
-  - @orders.each do |order|
+%table#orders.table.table-striped.table-bordered.display{cellspacing: "0", width: "100%"}
+  %thead  
     %tr
-      %td= order.comments
-      %td= order.payment_type
-      %td= link_to 'Show', order
-      %td= link_to 'Edit', edit_order_path(order)
-      %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Comments
+      %th Payment type
+      %th Total
+      %th Date
+      %th
+      %th
+      %th
+      
+  %tbody      
+    - @orders.each do |order|
+      %tr
+        %td= order.comments
+        %td= order.payment_type
+        %td= order.total
+        %td= order.created_at.strftime("%d.%m.%Y  %H:%M")
+        %td= link_to 'Show', order
+        %td= link_to 'Edit', edit_order_path(order)
+        %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
