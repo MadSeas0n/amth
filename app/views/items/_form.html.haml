@@ -9,26 +9,26 @@
           - @item.errors.full_messages.each do |message|
             %li= message
     .form-group
-      .col-sm-2
+      .col-sm-4
         = f.label :title    
       .col-sm-5 
         = f.text_field :title, class: 'form-control input-sm'
 
     .form-group
-      .col-sm-2  
+      .col-sm-4  
         = f.label :lcode
       .col-sm-5
         = f.text_field :lcode, class: 'form-control input-sm'
 
         
     .form-group
-      .col-sm-2  
+      .col-sm-4  
         = f.label :image
       .col-sm-5
         = f.text_field :img_url, class: 'form-control input-sm'
     .form-group
 
-      .col-sm-2
+      .col-sm-4
         = f.label :description
       .col-sm-5
         = f.text_area :description, rows: 3, cols: 40, class: 'form-control'

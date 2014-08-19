@@ -6,9 +6,7 @@
   %strong Description:
   %br
   %i= @item.description
-%p
-  %strong Price:
-  -#= @item.price
+
 = link_to 'Edit', edit_item_path(@item)
 |
 \#{link_to 'Back', items_path}
