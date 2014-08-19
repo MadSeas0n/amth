@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .carts {
-	.item_price, .totla_line {
+  .cart {
+    padding: 2% 2%;
+  table {
+    border-top: 2px dotted black;
+  }  
+  }
+	.item_price, .total_line {
 		text-align: right;
 	}
 	.total_line .total_cell {

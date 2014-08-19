@@ -24,7 +24,9 @@
     
 %br/
 
-= button_to "Add new Item", new_item_path, method: :get, class: 'btn btn-primary', remote: true
+= button_to "Add new item", new_item_path, method: :get, remote: true, class: 'btn btn-default btn-lg', id: 'add_btn'
+
+    
 
 #modal_dialog.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal-header", role: "dialog", tabindex: "-1"}
 
