@@ -1,13 +1,37 @@
-%p#notice= notice
+%p#notice
+  = notice
 
-%p
-  %b Comments:
-  = @order.comments
-%p
-  %b Payment type:
-  = @order.payment_type
-  = @order.total
+.order
+  %h3= "Продажа №"+"#{@order.id}"
 
-= link_to 'Edit', edit_order_path(@order)
-\|
-= link_to 'Back', orders_path
+  %table.order{width: "350px"}
+    - @order.cart_items.each do |i|
+      %tr
+        %td
+          = i.quantity
+          \×
+        %td= i.item.title
+        %td= "L-" + "#{i.item.lcode}"
+        %td.item_price= number_to_currency(i.item.sale_cost_final, unit: "руб.", format: '%n %u')
+    %tr.total_line
+      %td{colspan: "3"} Total: 
+      %td.total_cell= number_to_currency(@order.total, unit: "руб.", format: "%n %u")
+
+  %br/
+  %br/
+
+  %p
+    %b Комментарии:
+    %i= @order.comments
+  %p
+    %b Тип платежа:
+    = @order.payment_type
+  %p#sum
+    %b Сумма продажи: 
+    %h4= number_to_currency(@order.total, unit: "руб.", format: "%n %u")
+  
+
+
+  = link_to 'Edit', edit_order_path(@order)
+  |
+  #{link_to 'Back', orders_path}

@@ -1,3 +1,21 @@
 // Place all the styles related to the Orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.orders {
+  .order {
+    padding: 2% 2%;
+  }
+  table.order {
+    border-top: 2px dotted black;
+  }
+  .item_price, .total_line {
+    text-align: right;
+  }
+  .total_line .total_cell {
+    font-weight: bold;
+    border-top: 1px solid black;
+    }
+  p#sum, h4 {
+    display: inline;
+  }
+}

@@ -16,7 +16,7 @@
       %tr
         %td= order.comments
         %td= order.payment_type
-        %td= order.total
+        %td= number_to_currency(order.total, unit: "руб.", format: "%n %u")
         %td= order.created_at.strftime("%d.%m.%Y  %H:%M")
         %td= link_to 'Show', order
         %td= link_to 'Edit', edit_order_path(order)
