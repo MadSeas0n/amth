@@ -11,7 +11,7 @@ class Order < ActiveRecord::Base
 		end		
 	end
 	
-	def total
+	def total_sum
 		cart_items.map do |i| i.total_price end.sum
 	end
 end
