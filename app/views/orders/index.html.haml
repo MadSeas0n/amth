@@ -1,12 +1,12 @@
-%h1 Listing orders
-
+%h1 Таблица продаж
+= button_to 'Список товаров', items_path, method: :get, class: 'btn btn-default btn-lg'
 %table#orders.table.table-striped.table-bordered.display{cellspacing: "0", width: "100%"}
   %thead  
     %tr
-      %th Comments
-      %th Payment type
-      %th Total
-      %th Date
+      %th Дата
+      %th Сумма продажи
+      %th Комментарии
+      %th Тип оплаты
       %th
       %th
       %th
@@ -14,14 +14,14 @@
   %tbody      
     - @orders.each do |order|
       %tr
+        %td= order.created_at.strftime("%d.%m.%Y  %H:%M")
+        %td= number_to_currency(order.total, unit: "руб.", format: "%n %u")
         %td= order.comments
         %td= order.payment_type
-        %td= number_to_currency(order.total, unit: "руб.", format: "%n %u")
-        %td= order.created_at.strftime("%d.%m.%Y  %H:%M")
         %td= link_to 'Show', order
         %td= link_to 'Edit', edit_order_path(order)
         %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Order', new_order_path
+

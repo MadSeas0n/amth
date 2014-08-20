@@ -11,10 +11,13 @@ td.list_description {
 	margin-left: 10%;
 	height: 10px;
 }
-#add_btn {
+#add_btn, #orders_btn {
   margin-left: 0.5%;
 }
 #items_wrapper {
   padding-left: 0.5%;
   padding-right: 0.5%;
+}
+.add_btn dt {
+  display: inline;
 }

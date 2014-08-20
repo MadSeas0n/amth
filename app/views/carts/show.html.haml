@@ -10,14 +10,21 @@
           \×
         %td= i.item.title
         %td= "L-" + "#{i.item.lcode}"
-        %td.item_price= number_to_currency(i.total_price, unit: "руб", format: "%n %u")
+        %td.item_price= number_to_currency(i.total_price, unit: "руб.", format: "%n %u")
+
     %tr.total_line
       %td{colspan: "3"} Total:
-      %td.total_cell= number_to_currency(@cart.total_price, unit: "руб", format: "%n %u")
+      %td.total_cell= number_to_currency(@cart.total_price, unit: "руб.", format: "%n %u")
       -#%td= button_to 'Delete', i, method: :delete, data: {confirm: "Удалить #{i.item.title}?"}
-  %br/    
-  
+  %br/  
+
+  %p
+    %input{checked: "checked", type: "radio", name: "discount", id: "no_disc"}= " Без скидки"
+  %p  
+    %input{type: "radio", name: "discount", id: "disc"}= " Скидка" 
+    = number_field_tag 'discount'
 
   = button_to 'Оформить', new_order_path, method: :get, class: "btn btn-default btn-lg"
-  = button_to 'Очистить список товарныx позиций', @cart, method: :delete, data: {confirm: 'Все товарные позиции будут удалены из корзины! Продолжить?'}, class: "btn btn-default btn-sm"    
+  = button_to 'Очистить список товарныx позиций', @cart, method: :delete, data: {confirm: 'Все товарные позиции будут удалены из корзины! Продолжить?'}, class: "btn btn-default btn-sm"   
+  = button_to 'Назад к списку товаров', items_path, method: :get , class: "btn btn-default btn-sm"
         

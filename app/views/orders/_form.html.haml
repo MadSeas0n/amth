@@ -1,4 +1,4 @@
-= form_for @order do |f|
+= form_for(@order, html: {class: "form-horizontal", style: "display:inline"}) do |f|
   - if @order.errors.any?
     #error_explanation
       %h2= "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
@@ -6,11 +6,16 @@
         - @order.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :comments
-    = f.text_area :comments
-  .field
-    = f.label :payment_type
-    = f.select :payment_type, Order::PAYMENT_TYPES, prompt: 'Укажите тип оплаты'
+  .form-group
+    .col-sm-1 
+      = f.label :'Комментарии'
+    .col-sm-2
+      = f.text_area :comments, rows: 3, cols: 40, class: 'form-control', placeholder: "При безналичном расчете укажите номер чека в комментариях"
+  %br/    
+  .form-group
+    .col-sm-1  
+      = f.label :'Тип оплаты*'
+    .col-sm-2  
+      = f.select :payment_type, Order::PAYMENT_TYPES, prompt: 'Укажите тип оплаты'
   .actions
-    = f.submit 'Сохранить'
+    = f.submit 'Сохранить', class: 'btn btn-default btn-lg'

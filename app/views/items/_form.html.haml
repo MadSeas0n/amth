@@ -10,26 +10,26 @@
             %li= message
     .form-group
       .col-sm-4
-        = f.label :title    
+        = f.label :'Наименование'   
       .col-sm-5 
         = f.text_field :title, class: 'form-control input-sm'
 
     .form-group
       .col-sm-4  
-        = f.label :lcode
+        = f.label :'L код'
       .col-sm-5
         = f.text_field :lcode, class: 'form-control input-sm'
 
         
     .form-group
       .col-sm-4  
-        = f.label :image
+        = f.label :'Изображение'
       .col-sm-5
         = f.text_field :img_url, class: 'form-control input-sm'
     .form-group
 
       .col-sm-4
-        = f.label :description
+        = f.label :'Описание'
       .col-sm-5
         = f.text_area :description, rows: 3, cols: 40, class: 'form-control'
       %br/

@@ -24,8 +24,8 @@
     
 %br/
 
-= button_to "Add new item", new_item_path, method: :get, remote: true, class: 'btn btn-default btn-lg', id: 'add_btn'
-
+= button_to "Новая позиция", new_item_path, method: :get, remote: true, class: 'btn btn-default btn-lg', id: 'add_btn'
+= button_to "Таблица продаж", orders_path, method: :get, class: 'btn btn-default btn-lg', id: "orders_btn"
     
 
 #modal_dialog.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal-header", role: "dialog", tabindex: "-1"}
