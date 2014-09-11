@@ -17,5 +17,10 @@
       = f.label :'Тип оплаты*'
     .col-sm-2  
       = f.select :payment_type, Order::PAYMENT_TYPES, prompt: 'Укажите тип оплаты'
+  .form-group
+    .col-sm-1  
+      = f.label :'Точка продажи*'
+    .col-sm-2  
+      = f.select :store, Order::STORES, prompt: 'Выберите магазин'
   .actions
     = f.submit 'Сохранить', class: 'btn btn-default btn-lg'

@@ -1,7 +1,9 @@
 class Order < ActiveRecord::Base
 	PAYMENT_TYPES = ["Наличный расчет", "Безналичный расчет"]
+	STORES = ["Миллер", "Променад"]
 	has_many :cart_items, dependent: :destroy
 	validates :payment_type, inclusion: PAYMENT_TYPES
+	validates :store, inclusion: STORES
 	
 
 	def add_cart_items_from_cart(cart)

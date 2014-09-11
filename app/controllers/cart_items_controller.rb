@@ -1,6 +1,6 @@
 class CartItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create]
+  before_action :set_cart, only: [:create, :destroy]
   before_action :set_cart_item, only: [:show, :edit, :update, :destroy]
 
   # GET /cart_items
@@ -59,7 +59,7 @@ class CartItemsController < ApplicationController
   def destroy
     @cart_item.destroy
     respond_to do |format|
-      format.html { redirect_to cart_url, notice: 'item was successfully destroyed.' }
+      format.html { redirect_to @cart, notice: 'item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
