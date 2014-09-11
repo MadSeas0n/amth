@@ -1,7 +1,7 @@
-%p#notice= notice
-
 .cart  
+  %p#notice= notice
   %h2 Оформление продажи
+  = link_to "<span class='glyphicon glyphicon-remove'></span>".html_safe, @cart, method: :delete, data: {confirm: 'Все товарные позиции будут удалены из корзины! Продолжить?'}, class: "btn btn-default btn-xs"
   %table{width: "350px"}
     - @cart.cart_items.each do |i|
       %tr
@@ -24,7 +24,8 @@
   %br/  
 
  
+  
+     
+  = link_to "<span class='glyphicon glyphicon-circle-arrow-left'></span>".html_safe, items_path, method: :get , class: "btn btn-default btn-lg"
   = button_to 'Оформить', new_order_path, method: :get, class: "btn btn-default btn-lg"
-  = button_to 'Очистить список товарныx позиций', @cart, method: :delete, data: {confirm: 'Все товарные позиции будут удалены из корзины! Продолжить?'}, class: "btn btn-default btn-sm"   
-  = button_to 'Назад к списку товаров', items_path, method: :get , class: "btn btn-default btn-sm"
         

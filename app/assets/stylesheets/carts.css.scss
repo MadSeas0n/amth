@@ -6,6 +6,7 @@
     padding: 2% 2%;
   table {
     border-top: 2px dotted black;
+    overflow: hidden;
   }  
   }
 	.item_price, .total_line {
@@ -15,4 +16,24 @@
 		font-weight: bold;
 		border-top: 1px solid black;
 	}
+
+    .button_to {
+    display: inline;
+  }
+
+    .button_to div {
+    display: inline;
+  }
+  a.btn {
+    text-align: left;
+    border: none;
+  }
+  input.btn {
+    background-color: #D8D8D8;
+    margin-left: 180px;
+  }
+  .glyphicon-circle-arrow-left {
+    margin-left: -10px;
+  }
+ 
 }
