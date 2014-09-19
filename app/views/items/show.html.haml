@@ -1,14 +1,14 @@
-%p#notice= notice
-%p
-  %strong= @item.title
+.show_item  
+  %p#notice= notice
+  %p
+    %h3= @item.title   
+
+    
+  %p
+    %strong Описание:
+    %br
+    .descr= @item.description
+
+  = link_to "<span class='glyphicon glyphicon-circle-arrow-left'></span>".html_safe, items_path, method: :get , class: "btn btn-default btn-lg"
   
-%p
-  %strong Description:
-  %br
-  %i= @item.description
-
-= link_to 'Edit', edit_item_path(@item)
-|
-\#{link_to 'Back', items_path}
-
-=render 'table'
+  \#{link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_item_path(@item), class: "btn btn-default btn-lg"}
