@@ -15,8 +15,4 @@ class Cart < ActiveRecord::Base
 		cart_items.to_a.sum {|i| i.total_price}
 	end
 
-	def total_price_discount(discount_value)
-		cart_total_price = cart_items.to_a.sum {|i| i.total_price}
-		cart_total_price - (cart_total_price * discount_value)/100
-	end
 end
