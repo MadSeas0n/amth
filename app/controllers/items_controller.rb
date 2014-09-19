@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     @item  = Item.new
+    @orders = Order.all
   end
 
   # GET /items/1

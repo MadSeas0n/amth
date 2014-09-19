@@ -1,0 +1,23 @@
+%table#items.table.table-striped.table-bordered.display{cellspacing: "0", width: "100%"}
+  %thead
+    %tr
+      %th L Code
+      %th.title{width: "250"} Title
+      %th Поставщик
+      %th Вес
+      %th Остаток на складе
+      
+  %tbody.items_index
+    - @items.each do |i|
+      %tr
+        %td{align: "right"}= i.lcode
+        %td.list_description
+          %dl
+            %dt= link_to "#{i.title}", i
+            
+        %td= i.supplier_name
+        %td= i.weight
+        %th= i.quantity
+
+= button_to "Новая позиция", new_item_path, method: :get, remote: true, class: 'btn btn-default btn-lg', id: 'add_btn'        
+        

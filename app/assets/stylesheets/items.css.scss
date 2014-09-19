@@ -11,13 +11,17 @@ td.list_description {
 	margin-left: 10%;
 	height: 10px;
 }
-#add_btn, #orders_btn {
+#add_btn {
   margin-left: 0.5%;
+  margin-top: 0.5%;
 }
-#items_wrapper {
-  padding-left: 0.5%;
-  padding-right: 0.5%;
-}
+
 .add_btn dt {
   display: inline;
+}
+h1 {
+  padding-left: 0.5%;
+}
+ul#tabs.nav.nav-tabs li.active a {
+    font-weight: bold;  
 }

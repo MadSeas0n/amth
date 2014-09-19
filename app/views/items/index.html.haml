@@ -1,31 +1,25 @@
 %p#notice= notice
 %h1 Галерея Аметист
-%table#items.table.table-striped.table-bordered.display{cellspacing: "0", width: "100%"}
-  %thead
-    %tr
-      %th L Code
-      %th.title{width: "250"} Title
-      %th Поставщик
-      %th Вес
-      %th Закупка за кг ($)
-      %th Закупка за кг (руб)
-      %th Шиппинг за кг ($)
-      %th Шиппинг за кг (руб)
-      %th Закупка за обр ($)
-      %th Закупка за обр (руб)
-      %th Шиппинг за обр ($)
-      %th Шиппинг за обр (руб)
-      %th Себестоимость ($)
-      %th Себестоимость (руб)
-      %th Продажа (руб)
-      %th Продажа обнал. (руб)
-  %tbody.items_index
-    = render 'index'
+#content
+  %ul#tabs.nav.nav-tabs{"data-tabs" => "tabs"}
+    %li.active
+      %a{"data-toggle" => "tab", :href => "#index_1"} Список Материалов
+    %li
+      %a{"data-toggle" => "tab", :href => "#index_2"} Склад
+    %li
+      %a{"data-toggle" => "tab", :href => "#index_3"} Журнал Продаж
+  #my-tab-content.tab-content
+    #index_1.tab-pane.active
+      =render 'index'
+    #index_2.tab-pane
+      =render 'index_2'
+    #index_3.tab-pane
+      =render 'index_3' 
     
 %br/
 
-= button_to "Новая позиция", new_item_path, method: :get, remote: true, class: 'btn btn-default btn-lg', id: 'add_btn'
-= button_to "Таблица продаж", orders_path, method: :get, class: 'btn btn-default btn-lg', id: "orders_btn"
+-#= button_to "Новая позиция", new_item_path, method: :get, remote: true, class: 'btn btn-default btn-lg', id: 'add_btn'
+-#= button_to "Таблица продаж", orders_path, method: :get, class: 'btn btn-default btn-lg', id: "orders_btn"
     
 
 #modal_dialog.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal-header", role: "dialog", tabindex: "-1"}

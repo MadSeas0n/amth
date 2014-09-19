@@ -11,5 +11,7 @@ jQuery ->
         $('#price_field').css('color', 'black')
         $("#price_field").removeAttr('readonly')
         $("#price_field").focus() ->
-            this.select()   
+            this.select() 
+jQuery ->
+    $('#tabs').tab()                  
 

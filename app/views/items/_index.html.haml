@@ -1,22 +1,42 @@
-- @items.each do |i|
-  %tr
-    %td{align: "right"}= i.lcode
-    %td.list_description
-      %dl
-        %dt= link_to "#{i.title}", i
-        %dd= truncate(strip_tags(i.description), length: 80)
-      = link_to "<span class='glyphicon glyphicon-shopping-cart'></span>".html_safe, cart_items_path(item_id: i), method: :post, class: "btn btn-default btn-xs"
-    %td= i.supplier_name
-    %td= i.weight
-    %td= i.purchase_kg_usd
-    %td= i.purchase_kg_rur
-    %td= i.shipping_kg_usd
-    %td= i.shipping_kg_rur
-    %td= i.purachse_per_item_usd
-    %td= i.purachse_per_item_usd
-    %td= i.shipping_per_item_usd
-    %td= i.shipping_per_item_rur
-    %td= i.self_cost_usd
-    %td= i.self_cost_rur
-    %td= i.sale_cost
-    %td= i.sale_cost_final
+%table#items.table.table-striped.table-bordered.display{cellspacing: "0", width: "100%"}
+  %thead
+    %tr
+      %th L Code
+      %th.title{width: "250"} Title
+      %th Поставщик
+      %th Вес
+      %th Закупка за кг ($)
+      %th Закупка за кг (руб)
+      %th Шиппинг за кг ($)
+      %th Шиппинг за кг (руб)
+      %th Закупка за обр ($)
+      %th Закупка за обр (руб)
+      %th Шиппинг за обр ($)
+      %th Шиппинг за обр (руб)
+      %th Себестоимость ($)
+      %th Себестоимость (руб)
+      %th Продажа (руб)
+      %th Продажа обнал. (руб)
+  %tbody.items_index
+    - @items.each do |i|
+      %tr
+        %td{align: "right"}= i.lcode
+        %td.list_description
+          %dl
+            %dt= link_to "#{i.title}", i
+            %dd= truncate(strip_tags(i.description), length: 80)
+          = link_to "<span class='glyphicon glyphicon-shopping-cart'></span>".html_safe, cart_items_path(item_id: i), method: :post, class: "btn btn-default btn-xs"
+        %td= i.supplier_name
+        %td= i.weight
+        %td= i.purchase_kg_usd
+        %td= i.purchase_kg_rur
+        %td= i.shipping_kg_usd
+        %td= i.shipping_kg_rur
+        %td= i.purachse_per_item_usd
+        %td= i.purachse_per_item_usd
+        %td= i.shipping_per_item_usd
+        %td= i.shipping_per_item_rur
+        %td= i.self_cost_usd
+        %td= i.self_cost_rur
+        %td= i.sale_cost
+        %td= i.sale_cost_final
