@@ -21,4 +21,27 @@
 }
 .new_order {
   padding: 2% 2%;
+
+  h2 {
+    width: 360px;
+    border-bottom: 2px dotted black;
+    padding-bottom: 10px;
+  } 
+
+  .btn.btn-default.btn-lg {
+    background-color: #D8D8D8;
+    margin-left: 240px;
+  }
+
+  #edit_button {
+    border: none;
+  }
+  #edit_button:hover {
+    background-color: white;
+  }
+  span.glyphicon.glyphicon-pencil:hover {
+    color: green;
+  }
 }
+
+

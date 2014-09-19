@@ -7,16 +7,11 @@
           %li= msg
 
   .form-group
-    .col-sm-1 
-      = f.label :'Комментарии'
-    .col-sm-2
-      = f.text_area :comments, rows: 3, cols: 40, class: 'form-control', placeholder: "При безналичном расчете укажите номер чека в комментариях"
-  %br/    
-  .form-group
     .col-sm-1  
       = f.label :'Сумма:'
     .col-sm-2  
-      = f.text_field :total, value: "#{@order.total}"
+      = f.text_field :total, value: "#{@order.total}", id: 'price_field', readonly: true
+      = button_tag "<span class='glyphicon glyphicon-pencil'></span>".html_safe, type: 'button', id: 'edit_button', class: 'btn btn-default btn-xs'
   .form-group
     .col-sm-1  
       = f.label :'Тип оплаты*'
@@ -27,5 +22,11 @@
       = f.label :'Точка продажи*'
     .col-sm-2  
       = f.select :store, Order::STORES, prompt: 'Выберите магазин'
+  %br/            
+  .form-group
+    .col-sm-1 
+      = f.label :'Комментарии'
+    .col-sm-2
+      = f.text_area :comments, rows: 3, cols: 40, class: 'form-control', placeholder: "При безналичном расчете укажите номер чека в комментариях"
   .actions
     = f.submit 'Сохранить', class: 'btn btn-default btn-lg'
