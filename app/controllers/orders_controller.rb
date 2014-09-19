@@ -17,6 +17,8 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @order.add_cart_items_from_cart(@cart)
+    @order.total = @order.total_sum
   end
 
   # GET /orders/1/edit
@@ -30,8 +32,7 @@ class OrdersController < ApplicationController
     @order.add_cart_items_from_cart(@cart)
 
     respond_to do |format|
-      if @order.save
-        @order.update_column(:total, @order.total_sum)
+      if @order.save        
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         format.html { redirect_to @order, notice: 'Order was successfully created.' }

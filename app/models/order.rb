@@ -14,6 +14,7 @@ class Order < ActiveRecord::Base
 	end
 	
 	def total_sum
+		#cart_items.to_a.sum {|i| i.total_price}
 		cart_items.map do |i| i.total_price end.sum
 	end
 end

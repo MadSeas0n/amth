@@ -14,6 +14,11 @@
   %br/    
   .form-group
     .col-sm-1  
+      = f.label :'Сумма:'
+    .col-sm-2  
+      = f.text_field :total, value: "#{@order.total}"
+  .form-group
+    .col-sm-1  
       = f.label :'Тип оплаты*'
     .col-sm-2  
       = f.select :payment_type, Order::PAYMENT_TYPES, prompt: 'Укажите тип оплаты'
