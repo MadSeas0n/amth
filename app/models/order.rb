@@ -7,10 +7,16 @@ class Order < ActiveRecord::Base
 	
 
 	def add_cart_items_from_cart(cart)
-		cart.cart_items.each do |item|
-			item.cart_id = nil
-			cart_items << item			
+		cart.cart_items.each do |c_item|
+			c_item.cart_id = nil
+			cart_items << c_item
 		end		
+	end
+
+	def decrement_quantity(cart)
+			cart.cart_items.each do |c_item|
+				c_item.item.update_attribute("wh_quantity", c_item.item.wh_quantity - c_item.quantity)
+		end
 	end
 	
 	def total_sum

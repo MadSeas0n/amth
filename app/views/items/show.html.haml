@@ -9,6 +9,12 @@
     %br
     .descr= @item.description
 
+  = @item.wh_quantity
+  = form_for @item do |f|
+    = f.label 'Остаток на складе:'
+    = f.number_field :wh_quantity, value: "#{@item.wh_quantity}"
+    = f.submit 'OK'
+
   = link_to "<span class='glyphicon glyphicon-circle-arrow-left'></span>".html_safe, items_path, method: :get , class: "btn btn-default btn-lg"
   
   \#{link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_item_path(@item), class: "btn btn-default btn-lg"}

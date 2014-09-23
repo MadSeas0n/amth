@@ -17,7 +17,7 @@
             
         %td= i.supplier_name
         %td= i.weight
-        %th= i.quantity
-
+        %th= i.wh_quantity
+                                   
 = button_to "Новая позиция", new_item_path, method: :get, remote: true, class: 'btn btn-default btn-lg', id: 'add_btn'        
         

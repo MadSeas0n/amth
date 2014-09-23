@@ -10,6 +10,12 @@ class Item < ActiveRecord::Base
 	#	message: "Загружаемое изображение должно быть в формате JPG, GIF, PNG."
 	#}
 
+	def change_quantity
+		quantity += change_quantity_value
+	end
+
+
+
 	private
 
 	def ensure_cart_is_empty
