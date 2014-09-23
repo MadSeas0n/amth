@@ -1,20 +1,17 @@
 class Item < ActiveRecord::Base
 	has_many :cart_items
 	before_destroy :ensure_cart_is_empty
-
 	validates :title, :lcode, presence: true
-	#validates :price, numericality: {greater_than_or_equal_to: 0}
 	validates :title, :lcode, uniqueness: true
-	#validates :img_url, allow_blank: true, format: {
-	#	with: %r{\.(gif|jpg|png)\Z}i,
-	#	message: "Загружаемое изображение должно быть в формате JPG, GIF, PNG."
-	#}
-
-	def change_quantity
-		quantity += change_quantity_value
-	end
-
-
+	has_attached_file :photo, styles: {small: "150x150>"}
+	# validates_attachment_content_type :photo, content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
+	# validates_attachment_file_name :photo, :matches => [/png\Z/, /jpe?g\Z/]
+	do_not_validate_attachment_file_type :photo
+	# validates_attachment :photo, allow_blank: true
+  # validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  #	:content_type => {:content_type => "image/jpeg", "image/png"},
+  #	:size {:in => 0..5.megabytes} 
+	
 
 	private
 

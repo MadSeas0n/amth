@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923075109) do
+ActiveRecord::Schema.define(version: 20140923093533) do
 
   create_table "cart_items", force: true do |t|
     t.integer  "item_id"
@@ -54,6 +54,10 @@ ActiveRecord::Schema.define(version: 20140923075109) do
     t.decimal  "sale_cost",             precision: 8, scale: 2
     t.decimal  "sale_cost_final",       precision: 8, scale: 2
     t.integer  "wh_quantity",                                   default: 0
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "orders", force: true do |t|

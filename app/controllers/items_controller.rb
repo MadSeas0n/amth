@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy, :update_quantity]
   respond_to :html, :js
+  skip_before_filter :verify_authenticity_token, :only => [:index, :show, :create, :update]
 
   # GET /items
   # GET /items.json
@@ -73,6 +74,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:title, :lcode, :img_url, :description, :supplier_name, :weight, :supplier, :purchase_kg_usd, :purchase_kg_rur, :shipping_kg_usd, :shipping_kg_rur, :purachse_per_item_usd, :purachse_per_item_rur, :shipping_per_item_usd, :shipping_per_item_rur, :self_cost_usd, :self_cost_rur, :sale_cost, :sale_cost_final, :wh_quantity)
+      params.require(:item).permit(:photo, :title, :lcode, :img_url, :description, :supplier_name, :weight, :supplier, :purchase_kg_usd, :purchase_kg_rur, :shipping_kg_usd, :shipping_kg_rur, :purachse_per_item_usd, :purachse_per_item_rur, :shipping_per_item_usd, :shipping_per_item_rur, :self_cost_usd, :self_cost_rur, :sale_cost, :sale_cost_final, :wh_quantity)
     end
 end

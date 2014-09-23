@@ -1,9 +1,8 @@
 .show_item  
   %p#notice= notice
+  = image_tag @item.photo.url(:small)
   %p
-    %h3= @item.title   
-
-    
+    %h3= @item.title       
   %p
     %strong Описание:
     %br

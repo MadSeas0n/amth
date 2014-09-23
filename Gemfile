@@ -30,6 +30,8 @@ gem 'jquery-ui-themes'
 
 gem 'haml-rails', '~> 0.5.3'
 
+gem "paperclip", "~> 3.5.3"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
