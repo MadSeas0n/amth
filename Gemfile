@@ -29,6 +29,8 @@ gem 'jquery-ui-rails', '~> 4.2.1'
 gem 'jquery-ui-themes'
 
 gem 'haml-rails', '~> 0.5.3'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

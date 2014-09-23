@@ -3,7 +3,7 @@
   %p
     %h3= @item.title   
 
-    
+  = image_tag(@item.photo_url) if @item.photo?
   %p
     %strong Описание:
     %br
