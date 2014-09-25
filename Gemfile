@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'jquery-datatables-rails', '~> 2.1.10.0.3'
+gem 'jquery-datatables-rails' #, '~> 2.1.10.0.3'
 gem 'jquery-ui-rails', '~> 4.2.1'
 gem 'jquery-ui-themes'
 

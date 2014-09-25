@@ -5,6 +5,9 @@ jQuery ->
     $('#orders').dataTable
         "sPaginationType": "full_numbers"
         "bJQueryUI": true
+        "columnDefs": [
+          {type: 'de_datetime', targets: 0}
+        ]
     $('#price_field').css('color', 'gray')    
     $('#edit_button').click ->
         alert("При изменении цены, не забудте указать причину в комментариях!")

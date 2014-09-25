@@ -10,7 +10,7 @@
   %tbody.items_index
     - @items.each do |i|
       %tr
-        %td{align: "right"}= i.lcode
+        %td{align: "right"}= i.lcode.to_s.rjust(4, '0')
         %td.list_description
           %dl
             %dt= link_to "#{i.title}", i

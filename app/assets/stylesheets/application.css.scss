@@ -14,8 +14,12 @@
  *= require jquery.ui.core
  *= require jquery.ui.theme
  *= require dataTables/src/demo_table_jui
+ *= require dataTables/extras/dataTables.tableTools
  *= require_self
  */
+ 
+
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 a         {color: #383838                   !important;
@@ -26,3 +30,15 @@ a:visited {color: #383838                   !important;}
 a:hover   {color: #000000                   !important;
            background-color: transparent    !important;}
 a:active  {color: #383838                   !important;} 
+
+#items_length.dataTables_length {
+  margin-top: 10px;
+}
+
+#items_filter.dataTables_filter label {
+  margin-top: 5px;
+}
+div.DTTT_container.ui-buttonset.ui-buttonset-multi {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
