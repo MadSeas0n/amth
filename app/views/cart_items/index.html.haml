@@ -10,7 +10,7 @@
 
   - @cart_items.each do |cart_item|
     %tr
-      %td= cart_item.item
+      %td= cart_item.item.title
       %td= cart_item.cart
       %td= link_to 'Show', cart_item
       %td= link_to 'Edit', edit_cart_item_path(cart_item)

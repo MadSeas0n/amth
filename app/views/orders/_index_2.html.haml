@@ -1,0 +1,27 @@
+%table#orders.table.table-striped.table-bordered.display{cellspacing: "0", width: "100%"}
+  %thead  
+    %tr
+      %th Дата
+      %th Магазин
+      %th Сумма продажи
+      %th Позиции
+      %th Поставщики
+      %th Комментарии
+      %th Тип оплаты
+      %th
+      %th
+      %th
+      
+  %tbody      
+    - @orders.each do |ord|
+      - ord.order_items.each do |item|
+        %tr
+          %td= item
+        
+
+
+
+
+
+
+        

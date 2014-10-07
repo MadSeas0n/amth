@@ -2,11 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .carts {
+
   .cart {
     padding: 2% 2%;
   table {
     border-top: 2px dotted black;
     overflow: hidden;
+    width: 450px;
   }  
   }
 	.item_price, .total_line {
@@ -15,6 +17,7 @@
 	.total_line .total_cell {
 		font-weight: bold;
 		border-top: 1px solid black;
+    text-align: right;
 	}
 
     .button_to {
@@ -28,9 +31,8 @@
     text-align: left;
     border: none;
   }
-  input.btn {
-    background-color: #D8D8D8;
-    margin-left: 180px;
+  form.button_to div input {
+    margin-left: 270px;
   }
   .glyphicon-circle-arrow-left {
     margin-left: -10px;

@@ -7,6 +7,7 @@
   }
   table.order {
     border-top: 2px dotted black;
+    width: 350px;
   }
   .item_price, .total_line {
     text-align: right;
@@ -18,6 +19,9 @@
   p#sum, h4 {
     display: inline;
   }
+  div.order li {
+    margin-left: 30px;
+  }
 }
 .new_order {
   padding: 2% 2%;
@@ -28,8 +32,7 @@
     padding-bottom: 10px;
   } 
 
-  .btn.btn-default.btn-lg {
-    background-color: #D8D8D8;
+  div.actions input {
     margin-left: 240px;
   }
 
@@ -42,6 +45,7 @@
   span.glyphicon.glyphicon-pencil:hover {
     color: green;
   }
+
 }
 
 

@@ -9,6 +9,8 @@
       %a{"data-toggle" => "tab", :href => "#index_2"} Склад
     %li
       %a{"data-toggle" => "tab", :href => "#index_3"} Журнал Продаж
+    %li
+      %a{"data-toggle" => "tab", :href => "#index_4"} Отчеты
   #my-tab-content.tab-content
     #index_1.tab-pane.active
       =render 'index'
@@ -16,7 +18,9 @@
       =render 'index_2'
     #index_3.tab-pane
       =render 'index_3' 
-    
+    #index_4.tab-pane
+      =render 'index_4' 
+
 %br/
 
 -#= button_to "Новая позиция", new_item_path, method: :get, remote: true, class: 'btn btn-default btn-lg', id: 'add_btn'

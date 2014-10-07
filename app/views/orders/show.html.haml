@@ -21,6 +21,12 @@
   %br/
 
   %p
+    %b Позиции:
+    - @order.order_items.each do |element|
+      %li= element
+
+
+  %p
     %b Комментарии:
     %i= @order.comments
   %p

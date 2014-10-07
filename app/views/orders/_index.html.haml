@@ -4,6 +4,8 @@
       %th Дата
       %th Магазин
       %th Сумма продажи
+      %th Позиции
+      %th Поставщики
       %th Комментарии
       %th Тип оплаты
       %th
@@ -11,16 +13,23 @@
       %th
       
   %tbody      
-    - @orders.each do |order|
+    - @orders.each do |ord|
       %tr
-        %td= order.created_at.strftime("%d.%m.%Y  %H:%M")
-        %td= order.store
-        %td= number_to_currency(order.total, unit: "руб.", format: "%n %u")
-        %td= order.comments
-        %td= order.payment_type
-        %td= link_to 'Show', order
-        %td= link_to 'Edit', edit_order_path(order)
-        %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= ord.created_at.strftime("%d.%m.%Y  %H:%M")
+        %td= ord.store
+        %td= number_to_currency(ord.total, unit: "руб.", format: "%n %u")
+        %td{style: "padding-left:20px"}
+          - ord.order_items.each do |item|
+            %li= item
+        %td
+          - ord.order_suppliers.each do |sup|
+            %li{style: "list-style:none"}
+              = sup                          
+        %td= ord.comments
+        %td= ord.payment_type
+        %td= link_to 'Show', ord
+        %td= link_to 'Edit', edit_order_path(ord)
+        %td= link_to 'Destroy', ord, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 
 

@@ -9,11 +9,6 @@ class ItemsController < ApplicationController
     @items = Item.all
     @item  = Item.new
     @orders = Order.all
-
-    respond_to do |format|
-      format.html
-      format.csv { render text: @items.to_csv } 
-    end
   end
 
   # GET /items/1

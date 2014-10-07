@@ -32,7 +32,9 @@ class OrdersController < ApplicationController
     #@order.add_cart_items_from_cart(@cart)
     respond_to do |format|
       if @order.save
-        @order.decrement_quantity(@cart)        
+        @order.decrement_quantity(@cart)
+        @order.update_column(:order_items, @order.ordered_items(@cart))
+        @order.update_column(:order_suppliers, @order.order_suppl(@cart))
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
@@ -63,7 +65,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to items_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -76,6 +78,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:comments, :payment_type, :total, :store)
+      params.require(:order).permit(:comments, :payment_type, :total, :store, :order_items, :order_suppliers)
     end
 end
