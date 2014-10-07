@@ -1,0 +1,22 @@
+%h1 Listing sold_items
+
+%table
+  %tr
+    %th Title
+    %th Lcode
+    %th Price
+    %th Supplier
+    %th Order
+    %th Date
+
+  - @sold_items.each do |sold_item|
+    %tr
+      %td= sold_item.title
+      %td= sold_item.lcode
+      %td= sold_item.price
+      %td= sold_item.supplier
+      %td= sold_item.order_number
+      %td= sold_item.created_at.strftime("%d.%m.%Y  %H:%M")
+
+
+

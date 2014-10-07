@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
 	PAYMENT_TYPES = ["Наличный расчет", "Безналичный расчет"]
 	STORES = ["Миллер", "Променад"]
 	has_many :cart_items, dependent: :destroy
+	has_many :sold_items
 	validates :payment_type, inclusion: PAYMENT_TYPES
 	validates :store, inclusion: STORES
 	serialize :order_items

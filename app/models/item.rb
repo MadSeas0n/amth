@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
 	has_many :cart_items
+	has_many :sold_items
 	before_destroy :ensure_cart_is_empty
 	validates :title, :lcode, presence: true
 	validates :title, :lcode, uniqueness: true

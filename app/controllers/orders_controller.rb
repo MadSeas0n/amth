@@ -29,19 +29,27 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-    #@order.add_cart_items_from_cart(@cart)
     respond_to do |format|
       if @order.save
-        @order.decrement_quantity(@cart)
-        @order.update_column(:order_items, @order.ordered_items(@cart))
-        @order.update_column(:order_suppliers, @order.order_suppl(@cart))
-        Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
+         @order.decrement_quantity(@cart)
+         @order.update_column(:order_items, @order.ordered_items(@cart))
+         @order.update_column(:order_suppliers, @order.order_suppl(@cart))
+         @cart.cart_items.each do |c_item|
+           SoldItem.create(title:       c_item.item.title,
+                          lcode:        "L-#{c_item.item.lcode.to_s.rjust(4, '0')}",
+                          price:        c_item.item.sale_cost_final,
+                          supplier:     c_item.item.supplier_name,
+                          created_at:   @order.created_at,
+                          order_number: "Order №#{@order.id.to_s}"
+                          )
+         end
+         Cart.destroy(session[:cart_id])
+         session[:cart_id] = nil
+         format.html { redirect_to @order, notice: 'Order was successfully created.' }
+         format.json { render :show, status: :created, location: @order }
       else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+         format.html { render :new }
+         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end

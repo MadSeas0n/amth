@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @sold_item.title
+
+= link_to 'Edit', edit_sold_item_path(@sold_item)
+\|
+= link_to 'Back', sold_items_path
