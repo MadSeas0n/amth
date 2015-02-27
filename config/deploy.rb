@@ -1,8 +1,9 @@
 # config valid only for current version of Capistrano
 lock '3.3.5'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'amth'
+set :repo_url, 'https://github.com/MadSeas0n/amth.git'
+set :rbenv_ruby, '2.2.0'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -46,3 +47,11 @@ namespace :deploy do
   end
 
 end
+
+desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "service thin restart"  ## -> line you should add
+    end
+  end
+#after :publishing, :restart  
