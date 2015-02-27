@@ -1,10 +1,12 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'pg'
+#gem 'taps'
 # Use SCSS for stylesheets
 #gem 'activeadmin'#, github: 'activeadmin', branch: '0-6-stable'
 gem 'sass-rails', '~> 4.0.3' #gem 'sass-rails', '~> 5.0.0.beta1'#gem 'sass-rails'#, '~> 4.0.3'
@@ -46,7 +48,10 @@ gem 'mini_magick'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
