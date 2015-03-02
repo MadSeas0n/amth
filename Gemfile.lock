@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 6bde1f57ec5f9b724c21e5af146678f4ade839bc
+  revision: 7fe4ccb44da425a40438bee9516ed8d2ae87cd13
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0, >= 1.0.2)
@@ -227,6 +227,8 @@ DEPENDENCIES
   activeadmin!
   bootstrap-sass (~> 3.2.0)
   bourbon (< 4)
+  capistrano
+  capistrano-bundler
   capistrano-rails
   capistrano-rbenv (~> 2.0)
   carrierwave

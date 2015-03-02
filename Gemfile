@@ -6,6 +6,7 @@ gem 'rails', '~> 4.1.1'
 gem 'thin'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
+#gem 'pg'
 group :production  do
   gem 'pg'
 end  
@@ -53,6 +54,8 @@ gem 'mini_magick'
 
 # Use Capistrano for deployment
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv', '~> 2.0', require: false
 end

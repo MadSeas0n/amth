@@ -1,6 +1,11 @@
 # config valid only for current version of Capistrano
 lock '3.3.5'
 
+#require "bundler/capistrano"
+#require "pg/capistrano"
+
+#before "deploy:assets:precompile", "bundle:install"
+
 set :application, 'amth'
 set :repo_url, 'https://github.com/MadSeas0n/amth.git'
 set :rbenv_ruby, '2.2.0'
@@ -33,7 +38,7 @@ set :rbenv_ruby, '2.2.0'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 1
 
 namespace :deploy do
 
