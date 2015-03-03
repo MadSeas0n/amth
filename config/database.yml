@@ -28,13 +28,13 @@ development:
   encoding: unicode
   database: amth_development
   pool: 5
-  username: amth_sup
+  username: amth_adm
   password: qweasd
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: amth_development
+  database: amth_production
   pool: 5
-  username: amth_sup
+  username: amth_adm
   password: qweasd
