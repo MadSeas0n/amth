@@ -28,7 +28,7 @@ development:
   encoding: unicode
   database: amth_development
   pool: 5
-  username: postgres
+  username: amth_sup
   password: qweasd
 
 production:
@@ -36,5 +36,5 @@ production:
   encoding: unicode
   database: amth_development
   pool: 5
-  username: postgres
+  username: amth_sup
   password: qweasd
