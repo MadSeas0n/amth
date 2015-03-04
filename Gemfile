@@ -57,7 +57,7 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'capistrano-rbenv', '~> 2.0', require: false
+  gem 'capistrano-rbenv', github: "capistrano/rbenv"
 end
 
 # Use debugger
